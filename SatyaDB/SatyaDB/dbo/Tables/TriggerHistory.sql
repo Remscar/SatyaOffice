@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[TriggerHistory] (
-    [UserID]    INT        NOT NULL,
-    [TimeStamp] TIMESTAMP NOT NULL
+    [EventID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[UserID]    INT        NOT NULL,
+    
 );
 
