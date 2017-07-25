@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
+using TriggerRelay.Logic;
+
 namespace TriggerRelay.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -20,6 +22,8 @@ namespace TriggerRelay.Controllers
         [HttpGet("{id}")]
         public string New(int id)
         {
+            RelayLogic rl = new RelayLogic();
+            rl.HandleTrigger(id);
             return "value";
         }
 
