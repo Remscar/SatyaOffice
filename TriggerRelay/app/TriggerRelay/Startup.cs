@@ -30,7 +30,7 @@ namespace TriggerRelay
             // Add framework services.
             services.AddMvc();
 
-            
+            TriggerRelay.Logic.RelayLogic.instance = new TriggerRelay.Logic.RelayLogic();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

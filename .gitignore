@@ -10,3 +10,9 @@ SatyaDB/SatyaDB/bin/
 QuoteService/Tools/satya.wav
 
 QuoteService/Tools/satya2.wav
+
+TriggerRelay/app/\.vs/
+
+NativeApp/\.vs/
+
+NativeApp/NativeApp/obj/
