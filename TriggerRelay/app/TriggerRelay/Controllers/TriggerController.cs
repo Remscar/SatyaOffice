@@ -22,14 +22,21 @@ namespace TriggerRelay.Controllers
         [HttpGet("{id}")]
         public string New(int id)
         {
-            RelayLogic rl = new RelayLogic();
-            rl.HandleTrigger(id);
-            return "value";
+            RelayLogic.instance.HandleTrigger(id);
+            return "trigger added";
         }
 
-        // GET api/trigger/List/5
+        // GET api/trigger/List/5?last=2
         [HttpGet("{id}")]
-        public string List(int id)
+        public string[] GetList(int id, int last)
+        {
+            var list = RelayLogic.instance.GetTriggerList(id, last).Result;
+            return list;
+        }
+
+        // GET api/trigger/Last/5
+        [HttpGet("{id}")]
+        public string Last(int id)
         {
             return "value";
         }
