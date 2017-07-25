@@ -6,12 +6,12 @@ from pydub.silence import split_on_silence
 # Link: https://www.reddit.com/r/Windows10/comments/5006is/want_to_install_ffmpeg_under_bash_for_windows/
 
 print "Initializing Splice..."
-sound_file = AudioSegment.from_wav("satya.wav")
+sound_file = AudioSegment.from_wav("satya2.wav")
 audio_chunks = split_on_silence(sound_file, 
     # must be silent for at least a second
     min_silence_len=1000,
 
-    # consider it silent if quieter than -45 dBFS
+    # consider it silent if quieter than -55 dBFS (for large satya speech)
     silence_thresh= -55,
     keep_silence = 500
 )
