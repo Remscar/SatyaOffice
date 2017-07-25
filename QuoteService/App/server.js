@@ -45,7 +45,7 @@ app.listen(port);
 
 console.log('todo list RESTful API server started on: ' + port);
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('Hello, Satya!');
-}).listen(process.env.PORT || 8080);
+// http.createServer(function (req, res) {
+//     res.writeHead(200, { 'Content-Type': 'text/html' });
+//     res.end('Hello, Satya!');
+// }).listen(process.env.PORT || 8080);
