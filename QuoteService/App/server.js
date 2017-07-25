@@ -1,4 +1,4 @@
-// var http = require('http');
+var http = require('http');
 //
 // const MongoClient = require('mongodb').MongoClient;
 // const bodyParser = require('body-parser');

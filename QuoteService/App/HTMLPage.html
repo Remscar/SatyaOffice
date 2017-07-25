@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <ul style="list-style: none">
+        <li>Audio Files
+            <ul id="list">
+                <li><a href="#" data-value="http://satya-quote.azurewebsites.net/audio/democratize.mp3">Death_Becomes_Fur.oga</a></li>
+                <li><a href="#" data-value="http://satya-quote.azurewebsites.net/audio/dreams.mp3">Death_Becomes_Fur-OLD.mp4</a></li>
+                <li><a href="#" data-value="http://satya-quote.azurewebsites.net/audio/edu_opportunities.mp3">LiFe-Becomes_All.oga</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <audio id="audio" controls="controls">
+          <source id="audioSource" src=""></source>
+          Your browser does not support the audio format.
+        </audio>
+
+    <script>
+
+    var globalLastPlayed = 0;
+
+        list.onclick = function(e) {
+            e.preventDefault();
+
+
+            $.get( "http://satya-relay.azurewebsites.net/api/trigger/getlist/1", function( data ) {
+              $( ".result" ).html( data );
+              console.log(data);
+
+              if(data[0] == globalLastPlayed || globalLastPlayed == 0){
+                  $.get( "http://satya-quote.azurewebsites.net/api/quote", function( data ) {
+                    $( ".result" ).html( data );
+                    console.log(data);
+                    console.log("play");
+                  });
+              }else{
+
+              }
+
+
+
+
+
+            });
+
+
+
+//http://satya-relay.azurewebsites.net/api/trigger/getlist/1
+
+
+
+            //
+            // var elm = e.target;
+            // var audio = document.getElementById('audio');
+            //
+            // //document.getElementById('audio_id').src = 'different_file.wav';
+            //
+            // var source = document.getElementById('audioSource');
+            // source.src = elm.getAttribute('data-value');
+            //
+            // audio.load(); //call this to just preload the audio without playing
+            // audio.play(); //call this to play the song right away
+        };
+    </script>
+
+</body>
+
+
 </html>
