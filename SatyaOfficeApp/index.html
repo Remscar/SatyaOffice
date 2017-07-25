@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title></title>
+
+</head>
+
+<body>
+    <h1></h1>
+
+    <ul style="list-style: none">
+        <li>Audio Files
+            <ul id="list">
+                <li><a href="#" id="audiolink" data-value="http://satya-quote.azurewebsites.net/audio/democratize.mp3">Death_Becomes_Fur.oga</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <audio id="audio" controls="controls">
+          <source id="audioSource" src=""></source>
+          Your browser does not support the audio format.
+        </audio>
+
+    <script>
+        var currentNum = 0;
+        var loop = function() {
+             setTimeout(function() {
+                $.get("http://satya-relay.azurewebsites.net/api/trigger/getlist/1", function(data, status) {
+                    // New event was found
+                    if (currentNum < data[0]) {
+                        console.log('new data found');
+                        currentNum = data[0];
+                        // Access quote DB and replace audio player.
+                        $.get("http://Satya-quote.azurewebsites.net/api/quote", function(data, status) {
+                            console.log(data);
+                            $('#audiolink').html(data);
+                            $('#audiolink').attr('data-value', data);
+                            $('#audiolink').click();
+                        });
+                    }
+                    loop();
+                });
+             }, 2000);
+        }
+
+        loop();
+
+        list.onclick = function(e) {
+            e.preventDefault();
+
+            var elm = e.target;
+            var audio = document.getElementById('audio');
+
+            //document.getElementById('audio_id').src = 'different_file.wav';
+
+            var source = document.getElementById('audioSource');
+            source.src = elm.getAttribute('data-value');
+
+            audio.load(); //call this to just preload the audio without playing
+            audio.play(); //call this to play the song right away
+        };
+    </script>
+
+</body>
+
+
+</html>
