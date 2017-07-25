@@ -5,6 +5,21 @@ var randomArray = [
         "url":"http://satya-quote.azurewebsites.net/audio/democratize.mp3"
     },
     {
+        "url":"http://satya-quote.azurewebsites.net/audio/deepermeaning.mp3"
+    },
+    {
+        "url":"http://satya-quote.azurewebsites.net/audio/energized.mp3"
+    },
+    {
+        "url":"http://satya-quote.azurewebsites.net/audio/learningculture.mp3"
+    },
+    {
+        "url":"http://satya-quote.azurewebsites.net/audio/lifeandwork.mp3"
+    },
+    {
+        "url":"http://satya-quote.azurewebsites.net/audio/love.mp3"
+    },
+    {
         "url":"http://satya-quote.azurewebsites.net/audio/dreams.mp3"
     },
     {
