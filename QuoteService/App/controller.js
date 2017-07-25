@@ -2,23 +2,22 @@
 
 var randomArray = [
     {
-        "url":"wwww.pornhub.com"
+        "url":"http://satya-quote.azurewebsites.net/audio/democratize.mp3"
     },
     {
-        "url":"wwww.pornhub2.com"
+        "url":"http://satya-quote.azurewebsites.net/audio/dreams.mp3"
     },
     {
-        "url":"wwww.pornhub3.com"
+        "url":"http://satya-quote.azurewebsites.net/audio/edu_opportunities.mp3"
     },
     {
-        "url":"wwww.pornhub4.com"
+        "url":"http://satya-quote.azurewebsites.net/audio/dreams.mp3"
     },
     {
-        "url":"wwww.pornhub5.com"
+        "url":"http://satya-quote.azurewebsites.net/audio/dreams.mp3"
     },
 ]
 exports.randomUrl = function(req, res) {
-    console.log("fuck.. it worked!");
     var item = randomArray[Math.floor(Math.random()*randomArray.length)];
     res.send(item.url);
 };
