@@ -17,17 +17,13 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Satya Office</h1>
-      <h2 class="project-tagline">Inspiration. For All.</h2>
-      <a href="#" class="btn">View on GitHub</a>
-      <a href="https://garagehackbox.azurewebsites.net/hackathons/1074/projects/66813" class="btn">Project Page</a>
+      <img itemprop="logo" itemscope="itemscope" class="header-image" alt="Microsoft" src="https://assets.onestore.ms/cdnfiles/external/uhf/long/9a49a7e9d8e881327e81b9eb43dabc01de70a9bb/images/microsoft-white.png">
     </section>
 
     <section class="main-content">
       <div>
         <p><a href=""> <img src="img/satya.png" alt="" style="max-width:100%; margin-top: -30px"></a></p>
-        <h2>Welcome to Satya Office! This website gives you an inspirational Satya quote! Enjoy, and stay <b>#OneMicrosoft</b>.</h2>
-        <h3>Currently Playing: </h3>
+        <h2><center>Welcome to Satya Office! This website gives you an inspirational Satya quote! Enjoy, and stay <b>#OneMicrosoft</b>.</center></h2>
         <a href="#" id="audiolink" data-value="http://satya-quote.azurewebsites.net/audio/democratize.mp3"></a>
 
         <audio id="audio" controls="controls" style="display: none">
@@ -35,7 +31,23 @@
             Your browser does not support the audio format.
         </audio>
       </div>
-    </section>    
+    </section>
+
+    <script>
+        function inspireMe()
+        {
+            $.get("http://satya-relay.azurewebsites.net/api/trigger/new/1", function(data, status) { });
+        }
+    </script>
+
+    <section class="page-footer">
+      <h2 class="project-tagline">Inspiration. For All.</h2>
+      <a href="https://github.com/kfrankc/SatyaOffice" class="btn">View on GitHub</a>
+      <button  onclick="inspireMe();" class="btn">Inspire Me</button>
+      <a href="https://garagehackbox.azurewebsites.net/hackathons/1074/projects/66813" class="btn">Project Page</a>
+      <br>
+      <h2 class="project-tagline">Made with inspiration by Liam Bolling, Frank Chen, Leon Liang, and Zachary Nawar</h2>
+    </section>  
     <script>
         var currentNum = 0;
         var loop = function() {
@@ -64,7 +76,7 @@
                     }
                     loop();
                 });
-             }, 2000);
+             }, 1000);
         }
 
         loop();
